@@ -1,13 +1,13 @@
 @echo off
 
-echo Processing Runtime (currently using Linux as template)
-..\sources\tools\Stride.ProjectGenerator\bin\Debug\net472\Stride.ProjectGenerator.exe solution Stride.sln -o Stride.Runtime.sln -p Linux
+echo Processing Runtime (using Linux template)
+..\sources\tools\XenProjectGenerator\bin\Debug\net472\XenProjectGenerator.exe solution XenEngine.sln -o XenRuntime.sln -p Linux
 echo.
 
 echo Processing Android
-..\sources\tools\Stride.ProjectGenerator\bin\Debug\net472\Stride.ProjectGenerator.exe solution Stride.sln -o Stride.Android.sln -p Android
+..\sources\tools\XenProjectGenerator\bin\Debug\net472\XenProjectGenerator.exe solution XenEngine.sln -o Xen-Android.sln -p Android
 echo.
 
 echo Processing iOS
-..\sources\tools\Stride.ProjectGenerator\bin\Debug\net472\Stride.ProjectGenerator.exe solution Stride.sln -o Stride.iOS.sln -p iOS
+..\sources\tools\XenProjectGenerator\bin\Debug\net472\XenProjectGenerator.exe solution XenEngine.sln -o Xen-iOS.sln -p iOS
 echo.
