@@ -1,0 +1,8 @@
+﻿<!-- Build file pre-included by all Xen projects -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <XenCommonPreSettingsName>XenEngine</XenCommonPreSettingsName>
+    <XenPlatforms Condition="'$(XenPlatforms)' == ''">Windows;Android</XenPlatforms>
+  </PropertyGroup>
+</Project>
+
