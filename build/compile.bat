@@ -63,7 +63,7 @@ set _platform_target=Mixed Platforms
 
 rem Compiling the various solutions
 
-set Project=Stride.sln
+set Project=XenEngine.sln
 rem We always compile tests for the main solution
 set __OldSkipTestBuild=%__SkipTestBuild%
 set __SkipTestBuild=false
@@ -71,12 +71,12 @@ call :compile
 set __SkipTestBuild=%__OldSkipTestBuild%
 if %ERRORLEVEL% NEQ 0 if "%__ContinueOnError%" == "false" goto exit
 
-set Project=Stride.Android.sln
+set Project=XenEngine-Android.sln
 set _platform_target=Android
 call :compile
 if %ERRORLEVEL% NEQ 0 if "%__ContinueOnError%" == "false" goto exit
 
-set Project=Stride.iOS.sln
+set Project=XenEngine-iOS.sln
 set _platform_target=iPhone
 call :compile
 if %ERRORLEVEL% NEQ 0 if "%__ContinueOnError%" == "false" goto exit
@@ -87,9 +87,9 @@ rem Compile our solution. The following variables needs to be set:
 rem "Project" is the solution name
 rem "_platform_target" is the platform being targeted
 :compile
-set _option=/nologo /nr:false /m /verbosity:%__BuildVerbosity% /p:Configuration=%__BuildType% /p:Platform="%_platform_target%" /p:StrideSkipUnitTests=%__SkipTestBuild% %Project% /p:DeployExtension=false
+set _option=/nologo /nr:false /m /verbosity:%__BuildVerbosity% /p:Configuration=%__BuildType% /p:Platform="%_platform_target%" /p:XenSkipUnitTests=%__SkipTestBuild% %Project% /p:DeployExtension=false
 
-if "%__BuildDoc%" == "1" set _option=%_option% /p:StridePublicApi=true
+if "%__BuildDoc%" == "1" set _option=%_option% /p:XenPublicApi=true
 
 rem Skip Compilation if __SelectedProject was set and does not match what was requested
 if "%__SelectedProject%" NEQ "" (
